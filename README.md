@@ -52,11 +52,21 @@ npm run build
 
 ## Развертывание
 
-Проект можно развернуть на любом хостинге, поддерживающем статические сайты:
-- Vercel
+### GitHub Pages (автоматический)
+Проект автоматически деплоится на GitHub Pages при пуше в main ветку:
+- URL: https://galaxy-developers-inc.github.io/heihezdrav-global-care/
+
+### Vercel (рекомендуется)
+1. Подключите репозиторий к Vercel
+2. Vercel автоматически определит настройки из `vercel.json`
+3. Деплой произойдет автоматически
+
+### Другие платформы
+Проект совместим с:
 - Netlify
-- GitHub Pages
-- И других
+- Firebase Hosting
+- AWS S3 + CloudFront
+- И другими статическими хостингами
 
 ---
 
