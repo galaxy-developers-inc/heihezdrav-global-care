@@ -48,9 +48,9 @@ const Header = () => {
           
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:+862012345678" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+            <a href="tel:+862038881888" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
               <Phone className="w-4 h-4" />
-              <span>+86 20 XXXX XXXX</span>
+              <span>+86 20 3888 1888</span>
             </a>
             <LanguageSwitcher />
             <Button onClick={scrollToForm}>{t("nav.appointment")}</Button>

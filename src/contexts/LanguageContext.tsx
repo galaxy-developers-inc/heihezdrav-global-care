@@ -163,7 +163,30 @@ const translations = {
     'hero.rating': 'Рейтинг клиники',
     'hero.reviews': '500+ отзывов',
     
+    // Privacy Page
+    'privacy.title': 'Политика конфиденциальности',
+    'privacy.collection.title': 'Сбор информации',
+    'privacy.collection.content': 'Мы собираем только необходимую информацию для предоставления медицинских услуг: имя, контактные данные, медицинскую историю.',
+    'privacy.usage.title': 'Использование данных',
+    'privacy.usage.content': 'Ваши данные используются исключительно для медицинского обслуживания, записи на приём и связи с вами.',
+    'privacy.protection.title': 'Защита данных',
+    'privacy.protection.content': 'Мы используем современные методы шифрования и защиты данных. Информация не передается третьим лицам без вашего согласия.',
+    'privacy.contact.title': 'Контакты',
+    'privacy.contact.content': 'По вопросам конфиденциальности обращайтесь: info@heihezdrav.com',
+
+    // Terms Page
+    'terms.title': 'Условия обслуживания',
+    'terms.services.title': 'Медицинские услуги',
+    'terms.services.content': 'Клиника предоставляет медицинские услуги в соответствии с международными стандартами и лицензиями.',
+    'terms.appointments.title': 'Запись на приём',
+    'terms.appointments.content': 'Пациенты могут записаться онлайн или по телефону. Отмена должна быть сделана за 24 часа.',
+    'terms.payments.title': 'Оплата',
+    'terms.payments.content': 'Оплата производится наличными, картой или банковским переводом. Цены указаны в USD.',
+    'terms.liability.title': 'Ответственность',
+    'terms.liability.content': 'Клиника несет ответственность в рамках действующего законодательства и страхового покрытия.',
+
     // Common
+    'common.back_home': 'Вернуться на главную',
     'button.book_appointment': 'Записаться на прием',
     'button.learn_more': 'Узнать больше',
     'button.contact': 'Связаться с нами',
@@ -293,7 +316,30 @@ const translations = {
     'hero.rating': '诊所评分',
     'hero.reviews': '500+评价',
     
+    // Privacy Page
+    'privacy.title': '隐私政策',
+    'privacy.collection.title': '信息收集',
+    'privacy.collection.content': '我们只收集提供医疗服务所需的必要信息：姓名、联系方式、病史。',
+    'privacy.usage.title': '数据使用',
+    'privacy.usage.content': '您的数据仅用于医疗服务、预约和与您联系。',
+    'privacy.protection.title': '数据保护',
+    'privacy.protection.content': '我们使用现代加密和数据保护方法。未经您同意，信息不会传递给第三方。',
+    'privacy.contact.title': '联系方式',
+    'privacy.contact.content': '隐私问题请联系：info@heihezdrav.com',
+
+    // Terms Page
+    'terms.title': '服务条款',
+    'terms.services.title': '医疗服务',
+    'terms.services.content': '诊所按照国际标准和许可证提供医疗服务。',
+    'terms.appointments.title': '预约',
+    'terms.appointments.content': '患者可在线或电话预约。取消预约需提前24小时。',
+    'terms.payments.title': '付款',
+    'terms.payments.content': '可现金、刷卡或银行转账付款。价格以美元计价。',
+    'terms.liability.title': '责任',
+    'terms.liability.content': '诊所在现行法律和保险范围内承担责任。',
+
     // Common
+    'common.back_home': '返回首页',
     'button.book_appointment': '预约就诊',
     'button.learn_more': '了解更多',
     'button.contact': '联系我们',
