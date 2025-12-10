@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-clinic.jpg";
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   const scrollToForm = () => {
     document.getElementById("cta-form")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -13,20 +16,17 @@ const Hero = () => {
           {/* Text Content */}
           <div className="order-2 lg:order-1 animate-fade-in">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
-              Международная клиника{" "}
-              <span className="text-primary">мирового уровня</span>{" "}
-              в центре Китая
+              {t("hero.title")}
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-              Квалифицированные врачи, современное оборудование, полная забота о вашем здоровье. 
-              Более <span className="font-semibold text-foreground">5000</span> довольных пациентов по всему миру.
+              {t("hero.description")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="xl" onClick={scrollToForm}>
-                Записаться на приём
+                {t("hero.cta")}
               </Button>
               <Button variant="outline" size="xl" asChild>
-                <a href="#services">Наши услуги</a>
+                <a href="#services">{t("hero.learn_more")}</a>
               </Button>
             </div>
             
@@ -36,19 +36,19 @@ const Hero = () => {
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                   <span className="text-primary text-lg">✓</span>
                 </div>
-                <span className="text-sm text-muted-foreground">Лицензия JCI</span>
+                <span className="text-sm text-muted-foreground">{t("hero.jci")}</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                   <span className="text-primary text-lg">🌐</span>
                 </div>
-                <span className="text-sm text-muted-foreground">English Speaking</span>
+                <span className="text-sm text-muted-foreground">{t("hero.english")}</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                   <span className="text-primary text-lg">24</span>
                 </div>
-                <span className="text-sm text-muted-foreground">Поддержка 24/7</span>
+                <span className="text-sm text-muted-foreground">{t("hero.support")}</span>
               </div>
             </div>
           </div>
@@ -67,8 +67,8 @@ const Hero = () => {
                     <span className="text-secondary-foreground font-bold">4.9</span>
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground">Рейтинг клиники</p>
-                    <p className="text-sm text-muted-foreground">500+ отзывов</p>
+                    <p className="font-semibold text-foreground">{t("hero.rating")}</p>
+                    <p className="text-sm text-muted-foreground">{t("hero.reviews")}</p>
                   </div>
                 </div>
               </div>

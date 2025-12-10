@@ -1,36 +1,40 @@
-const doctors = [
-  {
-    name: "Dr. Chen Wei",
-    specialty: "Кардиология",
-    experience: "25 лет",
-    languages: "Chinese, English, Japanese",
-    qualification: "MD, FACC",
-    avatar: "CW",
-  },
-  {
-    name: "Dr. Liu Ming",
-    specialty: "Гастроэнтерология",
-    experience: "18 лет",
-    languages: "Chinese, English",
-    qualification: "MD, Board Certified",
-    avatar: "LM",
-  },
-  {
-    name: "Dr. Wang Hui",
-    specialty: "Дерматология",
-    experience: "15 лет",
-    languages: "Chinese, English, Korean",
-    qualification: "MD, PhD",
-    avatar: "WH",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Doctors = () => {
+  const { t } = useLanguage();
+  
+  const doctors = [
+    {
+      name: "Dr. Chen Wei",
+      specialty: t("doctors.cardiology"),
+      experience: "25 лет",
+      languages: "Chinese, English, Japanese",
+      qualification: "MD, FACC",
+      avatar: "CW",
+    },
+    {
+      name: "Dr. Liu Ming",
+      specialty: t("doctors.gastroenterology"),
+      experience: "18 лет",
+      languages: "Chinese, English",
+      qualification: "MD, Board Certified",
+      avatar: "LM",
+    },
+    {
+      name: "Dr. Wang Hui",
+      specialty: t("doctors.dermatology"),
+      experience: "15 лет",
+      languages: "Chinese, English, Korean",
+      qualification: "MD, PhD",
+      avatar: "WH",
+    },
+  ];
+
   return (
     <section id="doctors" className="section-padding bg-background">
       <div className="container-main">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-foreground mb-12">
-          Наши <span className="text-primary">врачи</span>
+          {t("doctors.title")}
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -47,9 +51,9 @@ const Doctors = () => {
               <p className="text-primary font-medium mb-4">{doctor.specialty}</p>
               
               <div className="space-y-2 text-sm text-muted-foreground">
-                <p><span className="font-medium text-foreground">Опыт:</span> {doctor.experience}</p>
-                <p><span className="font-medium text-foreground">Квалификация:</span> {doctor.qualification}</p>
-                <p><span className="font-medium text-foreground">Языки:</span> {doctor.languages}</p>
+                <p><span className="font-medium text-foreground">{t("doctors.experience")}:</span> {doctor.experience}</p>
+                <p><span className="font-medium text-foreground">{t("doctors.qualification")}:</span> {doctor.qualification}</p>
+                <p><span className="font-medium text-foreground">{t("doctors.languages")}:</span> {doctor.languages}</p>
               </div>
             </div>
           ))}

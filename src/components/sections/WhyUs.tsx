@@ -1,39 +1,42 @@
 import { Award, Users, Zap, Eye, CheckCircle } from "lucide-react";
-
-const features = [
-  {
-    icon: Award,
-    title: "Опытные врачи",
-    description: "20+ лет опыта, международные сертификаты",
-  },
-  {
-    icon: Users,
-    title: "Англоговорящий персонал",
-    description: "Полная поддержка на английском языке, переводчик 24/7",
-  },
-  {
-    icon: Zap,
-    title: "Современное оборудование",
-    description: "Последние технологии диагностики и лечения",
-  },
-  {
-    icon: Eye,
-    title: "Прозрачное ценообразование",
-    description: "Никаких скрытых платежей, смета предоставляется заранее",
-  },
-  {
-    icon: CheckCircle,
-    title: "Быстрая запись",
-    description: "Онлайн-бронирование доступно 24/7",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const WhyUs = () => {
+  const { t } = useLanguage();
+  
+  const features = [
+    {
+      icon: Award,
+      title: t("whyus.experience"),
+      description: t("whyus.experience.desc"),
+    },
+    {
+      icon: Users,
+      title: t("whyus.staff"),
+      description: t("whyus.staff.desc"),
+    },
+    {
+      icon: Zap,
+      title: t("whyus.technology"),
+      description: t("whyus.technology.desc"),
+    },
+    {
+      icon: Eye,
+      title: t("whyus.pricing"),
+      description: t("whyus.pricing.desc"),
+    },
+    {
+      icon: CheckCircle,
+      title: t("whyus.booking"),
+      description: t("whyus.booking.desc"),
+    },
+  ];
+
   return (
     <section id="why-us" className="section-padding bg-background">
       <div className="container-main">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-foreground mb-12">
-          Почему выбирают <span className="text-primary">нас?</span>
+          {t("whyus.title")}
         </h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">

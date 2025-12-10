@@ -1,73 +1,63 @@
-# Welcome to your Lovable project
+# Heihezdrav Global Care - Международная клиника
 
-## Project info
+Веб-сайт международной медицинской клиники с поддержкой русского и китайского языков.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Особенности
 
-## How can I edit this code?
+- 🌐 **Мультиязычность**: Переключение между русским и китайским языками
+- 🎨 **Современный дизайн**: Использует shadcn/ui компоненты
+- 📱 **Адаптивность**: Полностью адаптивный дизайн для всех устройств
+- ⚡ **Быстрая загрузка**: Построен на Vite для максимальной производительности
 
-There are several ways of editing your application.
+## Технологии
 
-**Use Lovable**
+- React 18 + TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
+- Lucide React (иконки)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Запуск проекта
 
-Changes made via Lovable will be committed automatically to this repo.
+1. Установите зависимости:
+```bash
+npm install
+```
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+2. Запустите сервер разработки:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+3. Откройте браузер по адресу: http://localhost:8080
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Переключение языков
 
-**Use GitHub Codespaces**
+В правом верхнем углу находится переключатель языка:
+- **РУС** - переключает на русский язык
+- **中文** - переключает на китайский язык
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Структура проекта
 
-## What technologies are used for this project?
+- `src/contexts/LanguageContext.tsx` - Контекст для управления языками
+- `src/components/LanguageSwitcher.tsx` - Компонент переключателя языка
+- `src/components/sections/` - Секции главной страницы
+- `src/components/ui/` - UI компоненты от shadcn/ui
 
-This project is built with:
+## Сборка для продакшена
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+npm run build
+```
 
-## How can I deploy this project?
+## Развертывание
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Проект можно развернуть на любом хостинге, поддерживающем статические сайты:
+- Vercel
+- Netlify
+- GitHub Pages
+- И других
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+*Создано для международной медицинской клиники Heihezdrav*

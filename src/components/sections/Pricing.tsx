@@ -1,18 +1,22 @@
-const pricingData = [
-  { service: "Консультация врача", price: "$80" },
-  { service: "УЗИ диагностика", price: "$150" },
-  { service: "КТ сканирование", price: "$400" },
-  { service: "Анализы крови", price: "$120" },
-  { service: "Первичная помощь", price: "$200" },
-  { service: "Телемедицина (30 мин)", price: "$60" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Pricing = () => {
+  const { t } = useLanguage();
+  
+  const pricingData = [
+    { service: t("pricing.consultation"), price: "$80" },
+    { service: t("pricing.ultrasound"), price: "$150" },
+    { service: t("pricing.ct"), price: "$400" },
+    { service: t("pricing.blood_test"), price: "$120" },
+    { service: t("pricing.emergency"), price: "$200" },
+    { service: t("pricing.telemedicine"), price: "$60" },
+  ];
+
   return (
     <section id="pricing" className="section-padding bg-background">
       <div className="container-main">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-foreground mb-12">
-          Стоимость <span className="text-primary">услуг</span>
+          {t("pricing.title")}
         </h2>
         
         <div className="max-w-2xl mx-auto">
@@ -20,8 +24,8 @@ const Pricing = () => {
             <table className="w-full">
               <thead>
                 <tr className="bg-muted">
-                  <th className="text-left px-6 py-4 font-semibold text-foreground">Услуга</th>
-                  <th className="text-right px-6 py-4 font-semibold text-foreground">Цена (USD)</th>
+                  <th className="text-left px-6 py-4 font-semibold text-foreground">{t("pricing.service")}</th>
+                  <th className="text-right px-6 py-4 font-semibold text-foreground">{t("pricing.price")}</th>
                 </tr>
               </thead>
               <tbody>
@@ -39,7 +43,7 @@ const Pricing = () => {
           </div>
           
           <p className="text-center text-sm text-muted-foreground mt-6">
-            * Цены ориентировочные. Точная стоимость определяется после консультации.
+            {t("pricing.note")}
           </p>
         </div>
       </div>

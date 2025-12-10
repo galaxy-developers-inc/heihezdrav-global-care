@@ -1,17 +1,20 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
-
-const navLinks = [
-  { label: "О нас", href: "#why-us" },
-  { label: "Услуги", href: "#services" },
-  { label: "Врачи", href: "#doctors" },
-  { label: "Цены", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { label: t("nav.about"), href: "#why-us" },
+    { label: t("nav.services"), href: "#services" },
+    { label: t("nav.doctors"), href: "#doctors" },
+    { label: t("nav.pricing"), href: "#pricing" },
+    { label: t("nav.faq"), href: "#faq" },
+  ];
 
   const scrollToForm = () => {
     document.getElementById("cta-form")?.scrollIntoView({ behavior: "smooth" });
@@ -49,7 +52,8 @@ const Header = () => {
               <Phone className="w-4 h-4" />
               <span>+86 20 XXXX XXXX</span>
             </a>
-            <Button onClick={scrollToForm}>Записаться</Button>
+            <LanguageSwitcher />
+            <Button onClick={scrollToForm}>{t("nav.appointment")}</Button>
           </div>
           
           {/* Mobile Menu Button */}
@@ -76,9 +80,12 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
-              <Button onClick={scrollToForm} className="mt-4">
-                Записаться на приём
-              </Button>
+              <div className="flex items-center gap-4 mt-4">
+                <LanguageSwitcher />
+                <Button onClick={scrollToForm} className="flex-1">
+                  {t("nav.appointment")}
+                </Button>
+              </div>
             </nav>
           </div>
         )}

@@ -4,36 +4,39 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-const faqData = [
-  {
-    question: "Как записаться на приём?",
-    answer: "Заполните форму на сайте, отправьте WhatsApp/WeChat, или позвоните в клинику. Запись занимает менее 5 минут.",
-  },
-  {
-    question: "Какие языки поддерживаются?",
-    answer: "Английский, китайский, японский, корейский. Переводчик доступен для других языков.",
-  },
-  {
-    question: "Какие документы нужны?",
-    answer: "Паспорт, медицинская страховка (если есть), предыдущие медицинские рекорды.",
-  },
-  {
-    question: "Есть ли скидки на пакеты услуг?",
-    answer: "Да, при заказе комплексного чекапа скидка 15%. Подробнее на консультации.",
-  },
-  {
-    question: "Если я иностранец, это может быть проблемой?",
-    answer: "Нет, мы специализируемся на иностранных пациентах. Весь процесс адаптирован для вас.",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const FAQ = () => {
+  const { t } = useLanguage();
+  
+  const faqData = [
+    {
+      question: t("faq.q1"),
+      answer: t("faq.a1"),
+    },
+    {
+      question: t("faq.q2"),
+      answer: t("faq.a2"),
+    },
+    {
+      question: t("faq.q3"),
+      answer: t("faq.a3"),
+    },
+    {
+      question: t("faq.q4"),
+      answer: t("faq.a4"),
+    },
+    {
+      question: t("faq.q5"),
+      answer: t("faq.a5"),
+    },
+  ];
+
   return (
     <section id="faq" className="section-padding bg-muted">
       <div className="container-main">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-foreground mb-12">
-          Часто задаваемые <span className="text-primary">вопросы</span>
+          {t("faq.title")}
         </h2>
         
         <div className="max-w-3xl mx-auto">

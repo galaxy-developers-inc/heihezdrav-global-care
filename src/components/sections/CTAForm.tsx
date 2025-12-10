@@ -10,18 +10,20 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
-
-const services = [
-  "Консультация врача",
-  "Диагностика",
-  "Терапия",
-  "Хирургия",
-  "Профилактика",
-  "Телемедицина",
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const CTAForm = () => {
+  const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const services = [
+    t("services.consultation"),
+    t("services.diagnostics"),
+    t("services.therapy"),
+    t("services.surgery"),
+    t("services.prevention"),
+    t("services.telemedicine"),
+  ];
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -31,8 +33,8 @@ const CTAForm = () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     
     toast({
-      title: "Заявка отправлена!",
-      description: "Наш администратор свяжется с вами в течение часа.",
+      title: t("cta.success_title"),
+      description: t("cta.success_desc"),
     });
     
     setIsSubmitting(false);
@@ -44,37 +46,37 @@ const CTAForm = () => {
       <div className="container-main">
         <div className="max-w-lg mx-auto text-center">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
-            Запишитесь на приём прямо сейчас
+            {t("cta.title")}
           </h2>
           <p className="text-primary-foreground/90 mb-8">
-            Заполните форму, и наш администратор свяжется с вами в течение часа
+            {t("cta.subtitle")}
           </p>
           
           <form onSubmit={handleSubmit} className="space-y-4 text-left">
             <Input
               name="name"
               type="text"
-              placeholder="Ваше имя"
+              placeholder={t("cta.name")}
               required
               className="bg-primary-foreground text-foreground border-0 h-12"
             />
             <Input
               name="email"
               type="email"
-              placeholder="Email"
+              placeholder={t("cta.email")}
               required
               className="bg-primary-foreground text-foreground border-0 h-12"
             />
             <Input
               name="phone"
               type="tel"
-              placeholder="Телефон/WhatsApp"
+              placeholder={t("cta.phone")}
               required
               className="bg-primary-foreground text-foreground border-0 h-12"
             />
             <Select name="service" required>
               <SelectTrigger className="bg-primary-foreground text-foreground border-0 h-12">
-                <SelectValue placeholder="Выберите услугу" />
+                <SelectValue placeholder={t("cta.service")} />
               </SelectTrigger>
               <SelectContent>
                 {services.map((service) => (
@@ -87,12 +89,12 @@ const CTAForm = () => {
             <Input
               name="date"
               type="date"
-              placeholder="Предпочтительная дата"
+              placeholder={t("cta.date")}
               className="bg-primary-foreground text-foreground border-0 h-12"
             />
             <Textarea
               name="message"
-              placeholder="Дополнительная информация"
+              placeholder={t("cta.message")}
               rows={4}
               className="bg-primary-foreground text-foreground border-0 resize-none"
             />
@@ -103,7 +105,7 @@ const CTAForm = () => {
               className="w-full"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Отправка..." : "Записаться"}
+              {isSubmitting ? t("cta.submitting") : t("cta.submit")}
             </Button>
           </form>
         </div>

@@ -1,48 +1,51 @@
 import { Stethoscope, Microscope, Heart, Activity, Shield, Video } from "lucide-react";
-
-const services = [
-  {
-    icon: Stethoscope,
-    title: "Консультация врача",
-    description: "Первичная консультация с профильным специалистом",
-  },
-  {
-    icon: Microscope,
-    title: "Диагностика",
-    description: "КТ, МРТ, УЗИ, анализы крови и другие методы",
-  },
-  {
-    icon: Heart,
-    title: "Терапия",
-    description: "Лечение острых и хронических заболеваний",
-  },
-  {
-    icon: Activity,
-    title: "Хирургия",
-    description: "Плановые и экстренные хирургические вмешательства",
-  },
-  {
-    icon: Shield,
-    title: "Профилактика",
-    description: "Чекап, вакцинация, профилактические осмотры",
-  },
-  {
-    icon: Video,
-    title: "Телемедицина",
-    description: "Онлайн-консультации, рецепты, наблюдение",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
+  const { t } = useLanguage();
+  
+  const services = [
+    {
+      icon: Stethoscope,
+      title: t("services.consultation"),
+      description: t("services.consultation.desc"),
+    },
+    {
+      icon: Microscope,
+      title: t("services.diagnostics"),
+      description: t("services.diagnostics.desc"),
+    },
+    {
+      icon: Heart,
+      title: t("services.therapy"),
+      description: t("services.therapy.desc"),
+    },
+    {
+      icon: Activity,
+      title: t("services.surgery"),
+      description: t("services.surgery.desc"),
+    },
+    {
+      icon: Shield,
+      title: t("services.prevention"),
+      description: t("services.prevention.desc"),
+    },
+    {
+      icon: Video,
+      title: t("services.telemedicine"),
+      description: t("services.telemedicine.desc"),
+    },
+  ];
+
   return (
     <section id="services" className="section-padding bg-muted">
       <div className="container-main">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Наши <span className="text-primary">услуги</span>
+            {t("services.title")}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Полный спектр медицинских услуг от диагностики до лечения
+            {t("services.subtitle")}
           </p>
         </div>
         

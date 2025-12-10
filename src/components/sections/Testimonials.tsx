@@ -1,35 +1,38 @@
 import { Star } from "lucide-react";
-
-const testimonials = [
-  {
-    name: "John Smith",
-    country: "USA",
-    rating: 5,
-    text: "Отличная клиника! Врачи профессиональны, персонал внимателен. Я чувствовал себя в безопасности.",
-    flag: "🇺🇸",
-  },
-  {
-    name: "Sarah Johnson",
-    country: "UK",
-    rating: 5,
-    text: "Быстрая запись, минимальные очереди. Цены справедливые, всё прозрачно. Рекомендую!",
-    flag: "🇬🇧",
-  },
-  {
-    name: "Max Weber",
-    country: "Germany",
-    rating: 5,
-    text: "Англоговорящий персонал - огромный плюс. Лечение прошло успешно, результат отличный.",
-    flag: "🇩🇪",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Testimonials = () => {
+  const { t } = useLanguage();
+  
+  const testimonials = [
+    {
+      name: "John Smith",
+      country: "USA",
+      rating: 5,
+      text: t("testimonials.1"),
+      flag: "🇺🇸",
+    },
+    {
+      name: "Sarah Johnson",
+      country: "UK",
+      rating: 5,
+      text: t("testimonials.2"),
+      flag: "🇬🇧",
+    },
+    {
+      name: "Max Weber",
+      country: "Germany",
+      rating: 5,
+      text: t("testimonials.3"),
+      flag: "🇩🇪",
+    },
+  ];
+
   return (
     <section id="testimonials" className="section-padding bg-primary/5">
       <div className="container-main">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-primary mb-12">
-          Отзывы пациентов
+          {t("testimonials.title")}
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
