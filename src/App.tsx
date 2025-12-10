@@ -17,7 +17,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.PROD ? "/heihezdrav-global-care" : ""}>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/privacy" element={<Privacy />} />
